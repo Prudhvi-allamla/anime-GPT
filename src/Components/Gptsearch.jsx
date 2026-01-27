@@ -14,7 +14,7 @@ import Moviecard from './Moviecard';
 
 const Gptsearch = () => {
 
-    
+
     const movies = useSelector(store => store.tmdb.gtpsearchmovies)
     const finallist = []
 
@@ -72,7 +72,7 @@ const Gptsearch = () => {
         console.log(finallist);
 
 
-
+  
 
     //     moviees.map((moviee) => {
 
