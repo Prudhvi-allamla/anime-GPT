@@ -52,7 +52,7 @@ const Body = () => {
       element: <Gptsearch />
     },
     {
-      path: "/movieDetails",
+      path: "/movieDetails/:id",
       element: <MovieDetails />
     },
 

@@ -11,6 +11,7 @@ import MovieDetails from '../Components/MovieDetails'
     gtpsearchmovies:[],
     gtpmovietitle:[],
     moviedetails:null,
+    loading:false,
     
   },
   reducers: {
@@ -29,6 +30,9 @@ import MovieDetails from '../Components/MovieDetails'
    addmoviedetails:(state,action)=>{
     state.moviedetails=action.payload
    },
+   toggleLoading:(state,action)=>{
+    state.loading=action.payload
+   }
    
    
    
@@ -37,6 +41,6 @@ import MovieDetails from '../Components/MovieDetails'
 })
 
 // Action creators are generated for each case reducer function
-export const { addnowplaying,addpopular,addgptsearchmovies,addmoviedetails} = tmdbslice.actions
+export const { addnowplaying,addpopular,addgptsearchmovies,addmoviedetails,toggleLoading} = tmdbslice.actions
 
 export default tmdbslice.reducer

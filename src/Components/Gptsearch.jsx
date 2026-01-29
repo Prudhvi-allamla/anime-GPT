@@ -3,8 +3,10 @@ import { GoogleGenAI } from '@google/genai';
 import { OPENAI_KEY } from '../constants/openAiConstants';
 import { OPTIONS } from '../constants/tmdbConstants';
 import { useDispatch, useSelector } from 'react-redux';
-import { addgptsearchmovies, } from '../utils/tmdbslice';
+import { addgptsearchmovies, toggleLoading, } from '../utils/tmdbslice';
 import Moviecard from './Moviecard';
+import Loading from './Loading';
+import { useNavigate } from 'react-router';
 
 
 
@@ -13,6 +15,10 @@ import Moviecard from './Moviecard';
 
 
 const Gptsearch = () => {
+    const navigate=useNavigate()
+    const empty=[]
+
+    const loading=useSelector(store=>store.tmdb.loading)
 
 
     const movies = useSelector(store => store.tmdb.gtpsearchmovies)
@@ -67,6 +73,8 @@ const Gptsearch = () => {
         );
 
         dispatch(addgptsearchmovies(finallist));
+         dispatch(toggleLoading(false))
+
         console.log("end")
 
         console.log(finallist);
@@ -86,7 +94,11 @@ const Gptsearch = () => {
 
     const handleGptSearch = async () => {
         console.log("button clicked")
-        main();
+        dispatch(addgptsearchmovies(empty));
+
+
+        dispatch(toggleLoading(true))
+        await main();
         const ai = new GoogleGenAI({ apiKey: 'GEMINI_API_KEY' });
 
     }
@@ -94,7 +106,11 @@ const Gptsearch = () => {
 
     return (
         <>
-            <div className='flex w-screen justify-center mt-30  '>
+        <div  className='flex justify-end'> <button className='bg-gray-600 text-md text-white px-4 py-2 rounded-2xl m-8 ' onClick={()=>{
+            navigate("/browse")
+        }}>back
+            </button></div>
+            <div className='flex w-screen justify-center mt-4   '>
                 <input type='text' className='bg-white p-2 w-100 rounded-2xl' placeholder=' Ask me what do you wanna watch.........' ref={searchtext} />
                 <button className='bg-red-700 p-2 px-6 mx-4 rounded-2xl' onClick={() => {
                     handleGptSearch()
@@ -102,15 +118,13 @@ const Gptsearch = () => {
                 
 
             </div >
-            {movies.length ? <div className='flex overflow-x-scroll no-scrollbar justify-center p-20' >
-                <div className="flex ">
+            {movies.length ? <div className='flex overflow-x-scroll no-scrollbar  p-5' >
+                <div className="flex justify-center flex-wrap ">
                     {movies.map(movie => <Moviecard key={movie.id} movie={movie} />)}
                 </div>
 
-            </div>:"" }
-            
-        </>
-    )
-}
+            </div>:  loading ? <Loading/>
 
+:""  }
+</>)}
 export default Gptsearch

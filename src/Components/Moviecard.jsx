@@ -10,11 +10,13 @@ const Moviecard = ({movie}) => {
   const navigate=useNavigate()
   
   const handleMovieDetails=()=>{
+
+    
     dispatch(addmoviedetails(movie))
 
 
     
-    navigate("/movieDetails");
+    navigate("/movieDetails/"+movie.id);
     
     
 
