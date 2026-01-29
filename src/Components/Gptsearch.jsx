@@ -107,7 +107,7 @@ const Gptsearch = () => {
                     {movies.map(movie => <Moviecard key={movie.id} movie={movie} />)}
                 </div>
 
-            </div>:<div className='text-2xl text-white'> loading...</div> }
+            </div>:"" }
             
         </>
     )

@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div>
             <div className='absolute z-10'>
-                <img className="w-40 p-4 " src="https://www.pikpng.com/pngl/b/469-4694291_one-piece-hat-png-clipart.png" />
+                <img className="w-40 p-4 " src="https://res.cloudinary.com/dfrlwuzeo/image/upload/v1769506816/pngtree-straw-hat-cartoon-illustration-png-image_8954284_nay3aj.png" />
 
             </div>
             <Outlet />
