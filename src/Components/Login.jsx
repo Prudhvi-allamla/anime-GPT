@@ -105,8 +105,8 @@ const Login = () => {
             <div className='absolute'>
                 <div className='flex w-screen h-screen justify-center items-center '>
 
-                    <form onSubmit={(e) => (e.preventDefault())} className='bg-gray-500
-                     w-3/12 h-auto p-4 rounded-2xl  justify-center' >
+                    <form onSubmit={(e) => (e.preventDefault())} className='bg-gray-500 
+                     md:w-3/12 h-auto p-4 rounded-2xl  justify-center' >
                         <h2 className='text-2xl font-bold font-mono'> {isreg ? "register" : "login"}</h2>
                         {isreg && <input className="bg-amber-50 w-full my-3 rounded-lg py-2" placeholder="Enter fullname" type='text' ref={name} />}
 

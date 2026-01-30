@@ -28,10 +28,10 @@ const Moviecard = ({movie}) => {
   return (
     <div className='text-white'>
       
-       <div className='w-40 m-4  ' onClick={handleMovieDetails}>
+       <div className='w-20 md:w-40 m-4   ' onClick={handleMovieDetails}>
         <img  className='border-2 rounded-md' src={TMDB_CDN_URL+movie.poster_path}/>
          <div>
-        <p className='flex justify-center'>{movie.title}</p>
+        <p className='hidden md:flex justify-center '>{movie.title}</p>
        </div>
        </div>
       

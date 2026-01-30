@@ -110,8 +110,8 @@ const Gptsearch = () => {
             navigate("/browse")
         }}>back
             </button></div>
-            <div className='flex w-screen justify-center mt-4   '>
-                <input type='text' className='bg-white p-2 w-100 rounded-2xl' placeholder=' Ask me what do you wanna watch.........' ref={searchtext} />
+            <div className=' mx-10 md:mx-0 md:flex w-screen justify-center mt-4   '>
+                <input type='text' className='bg-white  p-2 w-50 md:w-100 rounded-2xl' placeholder=' Ask me what do you wanna watch.........' ref={searchtext} />
                 <button className='bg-red-700 p-2 px-6 mx-4 rounded-2xl' onClick={() => {
                     handleGptSearch()
                 }}> search </button>

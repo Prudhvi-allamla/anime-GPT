@@ -39,7 +39,7 @@ const Movielist = ({ title, movies }) => {
         <div>
             <div className='text-3xl font-bold  relative   text-white'>{title} </div>
             <div className='flex overflow-x-scroll no-scrollbar' >
-                <div className="flex ">
+                <div className="flex  ">
                     {movies.map(movie => <Moviecard key={movie.id} movie={movie} />)}
                 </div>
 

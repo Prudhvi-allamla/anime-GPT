@@ -60,8 +60,12 @@ const Browse = () => {
   const popularMovies = useSelector(store => store.tmdb.popular)
   return (
     <div className=' w-screen '>
-      <div className='flex justify-between relative z-10'>
-        <Header />
+      <div className='flex justify-end relative z-10  md:justify-between '>
+        <div className='hidden md:block'>
+           <Header />
+
+        </div>
+       
 
         <div>
           <button className='bg-gray-700 text-lg m-4 text-white  p-4 py-2 rounded-lg' onClick={() => {
@@ -75,7 +79,7 @@ const Browse = () => {
       </div>
       <div className="  -my-20 h-screen overflow-hidden">
         <div className='absolute h-screen w-screen  bg-gradient-to-t from-black via-black/60 to-transparent'>     </div>
-        <video className='w-screen'
+        <video className='h-[50%] md:w-screen md:h-[100%]  object-cover ' 
           src="https://res.cloudinary.com/dfrlwuzeo/video/upload/v1769062635/Demon_Slayer_Kimetsu_no_Yaiba_Infinity_Castle_MAIN_TRAILER_720P_wdgpjw.mp4"
           loop
 
@@ -85,7 +89,7 @@ const Browse = () => {
           playsInline
         />
       </div >
-      <div className='-my-50 relative z-50' >
+      <div className='-my-100 md:-my-50 relative z-50' >
         <Movielist title="Now Playing" movies={playingnowMovies} />
         <Movielist title="Popular" movies={popularMovies} />
       </div>
