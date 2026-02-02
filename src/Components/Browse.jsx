@@ -5,6 +5,7 @@ import { removeuser } from '../utils/userslice';
 import { useNavigate } from 'react-router';
 import Movielist from './Movielist';
 import { getAuth, signOut } from "firebase/auth";
+import { addgptsearchmovies, addnowplaying, addpopular } from '../utils/tmdbslice';
 
 const Browse = () => {
 
@@ -40,6 +41,7 @@ const Browse = () => {
 
 
       dispatch(removeuser())
+     
     navigate("/")
       // Sign-out successful.
     }).catch((error) => {

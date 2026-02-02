@@ -4,10 +4,20 @@ import { auth } from "../utils/firebase"
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { adduser } from '../utils/userslice';
+import { addgptsearchmovies, addnowplaying, addpopular } from '../utils/tmdbslice';
 
 
 const Login = () => {
     const dispatch = useDispatch()
+
+    useEffect( ()=>{
+          dispatch(addnowplaying([]))
+          dispatch(addpopular([]))
+          dispatch(addgptsearchmovies([]))
+
+    },[])
+
+  
 
     const navigate = useNavigate()
     const user = useSelector(store => store.user)
@@ -87,6 +97,9 @@ const Login = () => {
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
+                    if(errorMessage){
+                        seterrorMessagedisplay("invalid creditials")
+                    } 
 
                 });
 
@@ -95,6 +108,7 @@ const Login = () => {
     }
 
     function handletoggel() {
+        seterrorMessagedisplay("")
         setIsreg(!isreg)
     }
 
