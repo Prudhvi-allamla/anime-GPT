@@ -98,7 +98,7 @@ const Login = () => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     if(errorMessage){
-                        seterrorMessagedisplay("invalid creditials")
+                        seterrorMessagedisplay("invalid creditials.")
                     } 
 
                 });
