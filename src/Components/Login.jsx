@@ -100,8 +100,9 @@ const Login = () => {
                     if(errorMessage){
                         seterrorMessagedisplay("invalid creditials.")
                     } 
+                    
 
-                });
+                }); 
 
         }
 
