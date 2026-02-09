@@ -137,7 +137,9 @@ const Login = () => {
                         <div className='flex justify-center w-full'>
                             <button className='w-9/12 py-3 bg-red-700  mt-10 rounded-md ' onClick={handledatasubmit}> {isreg ? "signup" : "login"}</button>
                         </div>
+
                         
+
 
                         <p className='py-5 cursor-pointer' onClick={handletoggel}>{isreg ? "already have a account . click here to login" : "dont have a account. register here...."}.</p>
 
