@@ -100,7 +100,7 @@ const Login = () => {
                     if(errorMessage){
                         seterrorMessagedisplay("invalid creditials.")
                     } 
-                    
+
 
                 }); 
 
@@ -110,6 +110,9 @@ const Login = () => {
 
     function handletoggel() {
         seterrorMessagedisplay("")
+
+
+        
         setIsreg(!isreg)
     }
 
@@ -134,6 +137,7 @@ const Login = () => {
                         <div className='flex justify-center w-full'>
                             <button className='w-9/12 py-3 bg-red-700  mt-10 rounded-md ' onClick={handledatasubmit}> {isreg ? "signup" : "login"}</button>
                         </div>
+                        
 
                         <p className='py-5 cursor-pointer' onClick={handletoggel}>{isreg ? "already have a account . click here to login" : "dont have a account. register here...."}.</p>
 
@@ -141,7 +145,7 @@ const Login = () => {
                 </div>
 
             </div>
-            <img className="h-screen w-screen" src="https://images2.alphacoders.com/774/thumb-1920-774545.jpg" />
+            <img className="h-screen w-screen" src="https://images2.alphacoders.com/774/thumb-1920-774545.jpg" /> 
 
 
 
